@@ -1,0 +1,26 @@
+---
+gin:
+  - name: user-service # Required
+    port: 8080 # Required
+    enabled: true # Required
+    sw:
+      enabled: true # Optional, default: false
+mysql:
+  - name: userdb # Required
+    enabled: true # Required
+    locale: "*::*::*::*"
+    addr: "localhost:3306" # Optional, default: localhost:3306
+    user: admin # Optional, default: root
+    pass: admin # Optional, default: pass
+    #    logger:
+    #      entry: ""
+    #      level: info
+    #      encoding: json
+    #      outputPaths: [ "stdout", "log/db.log" ]
+    #      slowThresholdMs: 5000
+    #      ignoreRecordNotFoundError: false
+    database:
+      - name: user # Required
+        autoCreate: true # Optional, default: false
+#        dryRun: false                # Optional, default: false
+#        params: []                   # Optional, default: ["charset=utf8mb4","parseTime=True","loc=Local"]
